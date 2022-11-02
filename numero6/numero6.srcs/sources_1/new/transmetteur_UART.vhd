@@ -33,7 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity transmetteur_UART is
     Generic (
-        baud_rate : INTEGER := 115200
+        baud_rate : INTEGER := 9600
     );
     Port (
         clk, start, reset : in STD_LOGIC;
@@ -122,15 +122,15 @@ begin
     begin
         case current_state is
          when idle_state =>
-            tx <= '1';
             occupe <= '0';
+            tx <= '1';
             pulse_gen_reset <= '1'; pulse_gen_en <= '0';
             rdc_reset <= '1'; rdc_enable <= '0'; rdc_mode <= '0';
             counter_reset <= '1'; counter_en <= '0';
             future_state <= load_state when start = '1' else idle_state;
          when load_state =>
-            tx <= '1';
             occupe <= '1';
+            tx <= '1';
             pulse_gen_reset <= '0'; pulse_gen_en <= '1';
             rdc_reset <= '0'; rdc_enable <= '1'; rdc_mode <= '1';
             counter_reset <= '1'; counter_en <= '0';
@@ -138,19 +138,18 @@ begin
 
          when start_bit_state =>
             occupe <= '1';
+            tx <= '0';
             pulse_gen_reset <= '0'; pulse_gen_en <= '1';
             rdc_reset <= '0'; rdc_enable <= '0'; rdc_mode <= '0';
             counter_reset <= '1'; counter_en <= '0';
-            tx <= '0';
-
             if (pulse = '1') then
                 future_state <= data_bits_state;
             else
                 future_state <= start_bit_state;
             end if;
          when data_bits_state =>
-            tx <= rdc_out;
             occupe <= '1';
+            tx <= rdc_out;
             pulse_gen_reset <= '0'; pulse_gen_en <= '1';
             rdc_reset <= '0'; rdc_enable <= '1'; rdc_mode <= '0';
             counter_reset <= '0'; counter_en <= '1';
@@ -158,18 +157,18 @@ begin
 
          when end_bit_state =>
             occupe <= '1';
+            tx <= '1';
             pulse_gen_reset <= '0'; pulse_gen_en <= '1';
             rdc_reset <= '0'; rdc_enable <= '0'; rdc_mode <= '0';
             counter_reset <= '1'; counter_en <= '0';
-            tx <= '1';
             future_state <= end_state when pulse = '1' else end_bit_state;
 
          when end_state =>
             occupe <= '0';
+            tx <= '1';
             pulse_gen_reset <= '0'; pulse_gen_en <= '1';
             rdc_reset <= '1'; rdc_enable <= '0'; rdc_mode <= '0';
             counter_reset <= '1'; counter_en <= '0';
-            tx <= '1';
             if (pulse = '1') then
                 future_state <= idle_state;
             else

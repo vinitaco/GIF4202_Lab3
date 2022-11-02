@@ -1,0 +1,209 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Tue Nov  1 23:04:59 2022
+| Host         : pop-os running 64-bit Pop!_OS 22.04 LTS
+| Command      : report_methodology -file top_level_methodology_drc_routed.rpt -pb top_level_methodology_drc_routed.pb -rpx top_level_methodology_drc_routed.rpx
+| Design       : top_level
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 30
++-----------+------------------+-------------------------------+------------+
+| Rule      | Severity         | Description                   | Violations |
++-----------+------------------+-------------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 22         |
+| LUTAR-1   | Warning          | LUT drives async reset alert  | 3          |
+| TIMING-18 | Warning          | Missing input or output delay | 5          |
++-----------+------------------+-------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-17#1 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/bit_counter/reg0/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#2 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/bit_counter/reg1/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#3 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/bit_counter/reg2/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#4 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/bit_counter/reg3/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#5 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/bit_counter/reg4/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#6 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/bit_counter/reg5/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#7 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/bit_counter/reg6/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#8 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/bit_counter/reg7/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#9 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/pulse_gen/cnt_2/reg0/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#10 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/pulse_gen/cnt_2/reg1/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#11 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/pulse_gen/cnt_2/reg2/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#12 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/pulse_gen/cnt_2/reg3/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#13 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/pulse_gen/cnt_2/reg4/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#14 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/pulse_gen/cnt_2/reg5/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#15 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/pulse_gen/cnt_2/reg6/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#16 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/pulse_gen/cnt_2/reg7/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#17 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/rdc_12/generate_regs[2].reg_i/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#18 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/rdc_12/generate_regs[3].reg_i/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#19 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/rdc_12/generate_regs[4].reg_i/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#20 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/rdc_12/generate_regs[5].reg_i/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#21 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/rdc_12/generate_regs[6].reg_i/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#22 Critical Warning
+Non-clocked sequential cell  
+The clock pin tx_uart/rdc_12/generate_regs[7].reg_i/q_reg/C is not reached by a timing clock
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell tx_uart/bit_counter/reg7/q_i_3__1, with 2 or more inputs, drives asynchronous preset/clear pin(s) tx_uart/bit_counter/reg0/q_reg/CLR, tx_uart/bit_counter/reg1/q_reg/CLR,
+tx_uart/bit_counter/reg2/q_reg/CLR, tx_uart/bit_counter/reg3/q_reg/CLR,
+tx_uart/bit_counter/reg4/q_reg/CLR, tx_uart/bit_counter/reg5/q_reg/CLR,
+tx_uart/bit_counter/reg6/q_reg/CLR, tx_uart/bit_counter/reg7/q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell tx_uart/pulse_gen/cnt_2/reg4/q_i_3__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) tx_uart/pulse_gen/cnt_1/reg1/q_reg/CLR,
+tx_uart/pulse_gen/cnt_1/reg2/q_reg/CLR,
+tx_uart/pulse_gen/cnt_1/reg3/q_reg/CLR,
+tx_uart/pulse_gen/cnt_1/reg4/q_reg/CLR,
+tx_uart/pulse_gen/cnt_1/reg5/q_reg/CLR,
+tx_uart/pulse_gen/cnt_1/reg6/q_reg/CLR,
+tx_uart/pulse_gen/cnt_1/reg7/q_reg/CLR,
+tx_uart/pulse_gen/cnt_2/reg0/q_reg/CLR,
+tx_uart/pulse_gen/cnt_2/reg1/q_reg/CLR,
+tx_uart/pulse_gen/cnt_2/reg2/q_reg/CLR,
+tx_uart/pulse_gen/cnt_2/reg3/q_reg/CLR,
+tx_uart/pulse_gen/cnt_2/reg4/q_reg/CLR,
+tx_uart/pulse_gen/cnt_2/reg5/q_reg/CLR,
+tx_uart/pulse_gen/cnt_2/reg6/q_reg/CLR,
+tx_uart/pulse_gen/cnt_2/reg7/q_reg/CLR (the first 15 of 16 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#3 Warning
+LUT drives async reset alert  
+LUT cell tx_uart/rdc_12/generate_regs[7].reg_i/q_i_4__0, with 2 or more inputs, drives asynchronous preset/clear pin(s) tx_uart/rdc_12/generate_regs[2].reg_i/q_reg/CLR,
+tx_uart/rdc_12/generate_regs[3].reg_i/q_reg/CLR,
+tx_uart/rdc_12/generate_regs[4].reg_i/q_reg/CLR,
+tx_uart/rdc_12/generate_regs[5].reg_i/q_reg/CLR,
+tx_uart/rdc_12/generate_regs[6].reg_i/q_reg/CLR
+tx_uart/rdc_12/generate_regs[7].reg_i/q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on reset relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on start relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on occupe relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on termine relative to clock(s) clk
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on tx relative to clock(s) clk
+Related violations: <none>
+
+
