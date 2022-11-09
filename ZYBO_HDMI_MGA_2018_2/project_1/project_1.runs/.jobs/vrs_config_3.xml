@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="HDMI_bd_rgb_switch_0_0_synth_1" LaunchDir="/home/vini/Documents/FPGA/GIF4202_Lab3/ZYBO_HDMI_MGA_2018_2/project_1/project_1.runs/HDMI_bd_rgb_switch_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/vini/Documents/FPGA/GIF4202_Lab3/ZYBO_HDMI_MGA_2018_2/project_1/project_1.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="HDMI_bd_rgb_switch_0_0_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+		<Parameter Name="runs.enableClusterConf" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

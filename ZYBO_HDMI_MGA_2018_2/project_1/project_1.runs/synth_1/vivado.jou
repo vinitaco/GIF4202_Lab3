@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Wed Nov  2 16:49:33 2022
+# Process ID: 232279
+# Current directory: /home/vini/Documents/FPGA/GIF4202_Lab3/ZYBO_HDMI_MGA_2018_2/project_1/project_1.runs/synth_1
+# Command line: vivado -log HDMI_bd_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source HDMI_bd_wrapper.tcl
+# Log file: /home/vini/Documents/FPGA/GIF4202_Lab3/ZYBO_HDMI_MGA_2018_2/project_1/project_1.runs/synth_1/HDMI_bd_wrapper.vds
+# Journal file: /home/vini/Documents/FPGA/GIF4202_Lab3/ZYBO_HDMI_MGA_2018_2/project_1/project_1.runs/synth_1/vivado.jou
+# Running On: pop-os, OS: Linux, CPU Frequency: 4257.752 MHz, CPU Physical cores: 6, Host memory: 16561 MB
+#-----------------------------------------------------------
+source HDMI_bd_wrapper.tcl -notrace
