@@ -2,12 +2,12 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Thu Nov 10 15:20:47 2022
-# Process ID: 125039
+# Start of session at: Thu Nov 10 15:33:07 2022
+# Process ID: 153132
 # Current directory: /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.runs/synth_1
 # Command line: vivado -log top_level.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl
 # Log file: /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.runs/synth_1/top_level.vds
 # Journal file: /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.runs/synth_1/vivado.jou
-# Running On: pop-os, OS: Linux, CPU Frequency: 3981.410 MHz, CPU Physical cores: 6, Host memory: 16561 MB
+# Running On: pop-os, OS: Linux, CPU Frequency: 3794.309 MHz, CPU Physical cores: 6, Host memory: 16561 MB
 #-----------------------------------------------------------
 source top_level.tcl -notrace

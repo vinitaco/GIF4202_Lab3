@@ -1,13 +1,15 @@
-
-*** Running vivado
-    with args -log top_level.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source top_level.tcl -notrace
-
-
-****** Vivado v2022.1 (64-bit)
-  **** SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
-  **** IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Thu Nov 10 15:34:18 2022
+# Process ID: 153569
+# Current directory: /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.runs/impl_1
+# Command line: vivado -log top_level.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_level.tcl -notrace
+# Log file: /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.runs/impl_1/top_level.vdi
+# Journal file: /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.runs/impl_1/vivado.jou
+# Running On: pop-os, OS: Linux, CPU Frequency: 4077.394 MHz, CPU Physical cores: 6, Host memory: 16561 MB
+#-----------------------------------------------------------
 source top_level.tcl -notrace
 Command: link_design -top top_level -part xc7z020clg400-1
 Design is defaulting to srcset: sources_1
@@ -50,7 +52,6 @@ Starting Logic Optimization Task
 
 Phase 1 Retarget
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-In IDDR TRANSFORM
 INFO: [Opt 31-49] Retargeted 0 cell(s).
 Phase 1 Retarget | Checksum: 1c1e81fa0
 
@@ -597,68 +598,3 @@ INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file top_level_
 INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
 INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
 INFO: [Common 17-206] Exiting Vivado at Thu Nov 10 15:35:06 2022...
-
-*** Running vivado
-    with args -log top_level.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source top_level.tcl -notrace
-
-
-****** Vivado v2022.1 (64-bit)
-  **** SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
-  **** IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-
-source top_level.tcl -notrace
-Command: open_checkpoint top_level_routed.dcp
-CRITICAL WARNING: [Board 49-67] The board_part definition was not found for digilentinc.com:zybo-z7-20:part0:1.0. This can happen sometimes when you use custom board part. You can resolve this issue by setting 'board.repoPaths' parameter, pointing to the location of custom board files. Valid board_part values can be retrieved with the 'get_board_parts' Tcl command.
-CRITICAL WARNING: [Board 49-67] The board_part definition was not found for digilentinc.com:zybo-z7-20:part0:1.0. This can happen sometimes when you use custom board part. You can resolve this issue by setting 'board.repoPaths' parameter, pointing to the location of custom board files. Valid board_part values can be retrieved with the 'get_board_parts' Tcl command.
-INFO: [Device 21-403] Loading part xc7z020clg400-1
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2625.699 ; gain = 0.000 ; free physical = 1241 ; free virtual = 7452
-INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2022.1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Timing 38-478] Restoring timing data from binary archive.
-INFO: [Timing 38-479] Binary timing data restore complete.
-INFO: [Project 1-856] Restoring constraints from binary archive.
-INFO: [Project 1-853] Binary constraint restore complete.
-Reading XDEF placement.
-Reading placer database...
-Reading XDEF routing.
-Read XDEF Files: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2689.730 ; gain = 0.000 ; free physical = 701 ; free virtual = 6912
-Restored from archive | CPU: 0.070000 secs | Memory: 1.350266 MB |
-Finished XDEF File Restore: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2689.730 ; gain = 0.000 ; free physical = 701 ; free virtual = 6912
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2689.730 ; gain = 0.000 ; free physical = 701 ; free virtual = 6912
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-INFO: [Project 1-604] Checkpoint was created with Vivado v2022.1 (64-bit) build 3526262
-open_checkpoint: Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 2689.730 ; gain = 75.930 ; free physical = 700 ; free virtual = 6912
-Command: write_bitstream -force top_level.bit
-Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
-Running DRC as a precondition to command write_bitstream
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/vini/Xilinx/Vivado/2022.1/data/ip'.
-INFO: [DRC 23-27] Running DRC with 8 threads
-WARNING: [DRC PDRC-153] Gated clock check: Net tx_uart/pulse_gen/pulse is a gated clock net sourced by a combinational pin tx_uart/pulse_gen/q_i_3/O, cell tx_uart/pulse_gen/q_i_3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-WARNING: [DRC PLHOLDVIO-2] Non-Optimal connections which could lead to hold violations: A LUT tx_uart/pulse_gen/q_i_3 is driving clock pin of 14 cells. This could lead to large hold time violations. Involved cells are:
-tx_uart/bit_counter/reg0/q_reg, tx_uart/bit_counter/reg1/q_reg, tx_uart/bit_counter/reg2/q_reg, tx_uart/bit_counter/reg3/q_reg, tx_uart/bit_counter/reg4/q_reg, tx_uart/bit_counter/reg5/q_reg, tx_uart/bit_counter/reg6/q_reg, tx_uart/bit_counter/reg7/q_reg, tx_uart/rdc_12/generate_regs[2].reg_i/q_reg, tx_uart/rdc_12/generate_regs[3].reg_i/q_reg, tx_uart/rdc_12/generate_regs[4].reg_i/q_reg, tx_uart/rdc_12/generate_regs[5].reg_i/q_reg, tx_uart/rdc_12/generate_regs[6].reg_i/q_reg, and tx_uart/rdc_12/generate_regs[7].reg_i/q_reg
-WARNING: [DRC ZPS7-1] PS7 block required: The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 3 Warnings
-INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
-INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
-Loading data files...
-Loading site data...
-Loading route data...
-Processing options...
-Creating bitmap...
-Creating bitstream...
-Writing bitstream ./top_level.bit...
-INFO: [Vivado 12-1842] Bitgen Completed Successfully.
-INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
-INFO: [Common 17-83] Releasing license: Implementation
-22 Infos, 3 Warnings, 2 Critical Warnings and 0 Errors encountered.
-write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 3110.352 ; gain = 420.621 ; free physical = 632 ; free virtual = 6855
-INFO: [Common 17-206] Exiting Vivado at Thu Nov 10 15:35:48 2022...
