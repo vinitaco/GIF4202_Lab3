@@ -141,12 +141,7 @@ begin
             pulse_gen_reset <= '0';
             rdc_reset <= '0'; rdc_enable <= '0'; rdc_mode <= '0';
             counter_reset <= '1'; counter_en <= '0';
-            if (pulse = '1') then
-                future_state <= data_bits_state;
-            else
-                future_state <= start_bit_state;
-            end if;
-            --future_state <= data_bits_state when pulse = '1' else start_bit_state;
+            future_state <= data_bits_state when pulse = '1' else start_bit_state;
 
          when data_bits_state =>
             occupe <= '1';

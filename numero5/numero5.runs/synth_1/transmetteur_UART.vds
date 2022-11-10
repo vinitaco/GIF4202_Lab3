@@ -1,13 +1,15 @@
-
-*** Running vivado
-    with args -log transmetteur_UART.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source transmetteur_UART.tcl
-
-
-****** Vivado v2022.1 (64-bit)
-  **** SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
-  **** IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Thu Nov 10 13:45:57 2022
+# Process ID: 101533
+# Current directory: /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.runs/synth_1
+# Command line: vivado -log transmetteur_UART.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source transmetteur_UART.tcl
+# Log file: /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.runs/synth_1/transmetteur_UART.vds
+# Journal file: /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.runs/synth_1/vivado.jou
+# Running On: pop-os, OS: Linux, CPU Frequency: 4100.271 MHz, CPU Physical cores: 6, Host memory: 16561 MB
+#-----------------------------------------------------------
 source transmetteur_UART.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.srcs/utils_1/imports/synth_1/transmetteur_UART.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.srcs/utils_1/imports/synth_1/transmetteur_UART.dcp for incremental synthesis

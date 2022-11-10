@@ -43,35 +43,29 @@ entity pulse_generator is
 end pulse_generator;
 
 architecture Behavioral of pulse_generator is
-
-    component cmp_16bits is
-    Port (
-        A, B : in STD_LOGIC_VECTOR (15 downto 0);
-        CMP : out STD_LOGIC
-    );
-    end component;
     
-    component counter is
-        Port (
-            RESET, CLK, EN : in STD_LOGIC;
-            C_OUT : out STD_LOGIC_VECTOR (7 downto 0)
-        );
-    end component;
-    
-    signal cnt_16b : STD_LOGIC_VECTOR (15 downto 0);
-    signal gt_in_count, counter_reset, do_pulse : STD_LOGIC;
-    signal x : STD_LOGIC_VECTOR(15 downto 0);
+    signal do_pulse : STD_LOGIC;
+    signal cnt_val : INTEGER;
     
 begin
-    x <= STD_LOGIC_VECTOR(to_unsigned(in_count, 16));
-    cnt_1 : counter Port Map (RESET=>counter_reset, CLK=>clk, EN=>en, C_OUT=>cnt_16b(7 downto 0));
-    cnt_2 : counter Port Map (RESET=>counter_reset, CLK=>cnt_16b(7), EN=>en, C_OUT=>cnt_16b(15 downto 8));
 
-    cmp_1 : cmp_16bits Port Map (A=>x, B=>cnt_16b, CMP=>gt_in_count);
-    cmp_2 : cmp_16bits Port Map (A=>cnt_16b, B=>x"0001", CMP=>do_pulse);
+    process (clk, reset) is
+    begin
+        if (reset = '1') then
+            cnt_val <= 0;
+            do_pulse <= '0';
+        elsif (rising_edge(clk)) then
+            if (cnt_val = in_count) then
+                cnt_val <= 0;
+                do_pulse <= '1';
+            else
+                do_pulse <= '1' when cnt_val = 0 else '0';
+                cnt_val <= cnt_val + 1;
+            end if;
+        end if;
+    end process;
     
     pulse <= do_pulse when reset = '0' and en = '1' else '0';
-    counter_reset <= reset or gt_in_count;
     
 
 end Behavioral;
