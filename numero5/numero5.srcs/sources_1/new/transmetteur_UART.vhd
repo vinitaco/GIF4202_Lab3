@@ -94,9 +94,6 @@ architecture Behavioral of transmetteur_UART is
     signal counter_reset, counter_en : STD_LOGIC;
     signal counter_value : STD_LOGIC_VECTOR (7 downto 0);
 
-    signal int_tx : STD_LOGIC;
-
-
 begin
 
     rdc_12 : rdc_Nbits
@@ -109,6 +106,8 @@ begin
 
     bit_counter : counter Port Map (reset=>counter_reset, en=>counter_en, clk=>pulse, c_out=>counter_value);
 
+    pulse_gen_en <= '1';
+
     process (reset, clk) is
     begin
         if (reset = '1') then
@@ -118,20 +117,20 @@ begin
         end if;
     end process;
 
-    process (current_state, pulse, start) is
+    process (current_state, pulse, start, rdc_out, counter_value) is
     begin
         case current_state is
          when idle_state =>
             occupe <= '0';
             tx <= '1';
-            pulse_gen_reset <= '1'; pulse_gen_en <= '0';
+            pulse_gen_reset <= '1';
             rdc_reset <= '1'; rdc_enable <= '0'; rdc_mode <= '0';
             counter_reset <= '1'; counter_en <= '0';
             future_state <= load_state when start = '1' else idle_state;
          when load_state =>
             occupe <= '1';
             tx <= '1';
-            pulse_gen_reset <= '0'; pulse_gen_en <= '1';
+            pulse_gen_reset <= '0';
             rdc_reset <= '0'; rdc_enable <= '1'; rdc_mode <= '1';
             counter_reset <= '1'; counter_en <= '0';
             future_state <= start_bit_state;
@@ -139,7 +138,7 @@ begin
          when start_bit_state =>
             occupe <= '1';
             tx <= '0';
-            pulse_gen_reset <= '0'; pulse_gen_en <= '1';
+            pulse_gen_reset <= '0';
             rdc_reset <= '0'; rdc_enable <= '0'; rdc_mode <= '0';
             counter_reset <= '1'; counter_en <= '0';
             if (pulse = '1') then
@@ -147,10 +146,12 @@ begin
             else
                 future_state <= start_bit_state;
             end if;
+            --future_state <= data_bits_state when pulse = '1' else start_bit_state;
+
          when data_bits_state =>
             occupe <= '1';
             tx <= rdc_out;
-            pulse_gen_reset <= '0'; pulse_gen_en <= '1';
+            pulse_gen_reset <= '0';
             rdc_reset <= '0'; rdc_enable <= '1'; rdc_mode <= '0';
             counter_reset <= '0'; counter_en <= '1';
             future_state <= end_bit_state when counter_value = x"08" else data_bits_state;
@@ -158,7 +159,7 @@ begin
          when end_bit_state =>
             occupe <= '1';
             tx <= '1';
-            pulse_gen_reset <= '0'; pulse_gen_en <= '1';
+            pulse_gen_reset <= '0';
             rdc_reset <= '0'; rdc_enable <= '0'; rdc_mode <= '0';
             counter_reset <= '1'; counter_en <= '0';
             future_state <= end_state when pulse = '1' else end_bit_state;
@@ -166,14 +167,11 @@ begin
          when end_state =>
             occupe <= '0';
             tx <= '1';
-            pulse_gen_reset <= '0'; pulse_gen_en <= '1';
+            pulse_gen_reset <= '0';
             rdc_reset <= '1'; rdc_enable <= '0'; rdc_mode <= '0';
             counter_reset <= '1'; counter_en <= '0';
-            if (pulse = '1') then
-                future_state <= idle_state;
-            else
-                future_state <= end_state;
-            end if;
+            future_state <= idle_state when pulse = '1' else end_state;
+
         end case;
     end process;
 
