@@ -6,4 +6,4 @@
 # Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log transmetteur_UART.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source transmetteur_UART.tcl
+vivado -log top_level.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl

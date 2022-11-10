@@ -1,6 +1,4 @@
 set_property SRC_FILE_INFO {cfile:/home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.srcs/constrs_1/new/num6_constraints.xdc rfile:../../../numero5.srcs/constrs_1/new/num6_constraints.xdc id:1} [current_design]
-set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ} [current_design]
-set_property IOSTANDARD LVCMOS18 [get_ports termine]
 set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN V18 [get_ports {data[5]}]
 set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]

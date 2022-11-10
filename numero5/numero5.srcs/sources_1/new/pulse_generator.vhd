@@ -56,10 +56,10 @@ begin
             do_pulse <= '0';
         elsif (rising_edge(clk)) then
             if (cnt_val = in_count) then
-                cnt_val <= 0;
                 do_pulse <= '1';
+                cnt_val <= 0;
             else
-                do_pulse <= '1' when cnt_val = 0 else '0';
+                do_pulse <= '0';
                 cnt_val <= cnt_val + 1;
             end if;
         end if;

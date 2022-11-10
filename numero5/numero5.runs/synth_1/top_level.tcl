@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.runs/synth_1/transmetteur_UART.tcl"
+  variable script "/home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.runs/synth_1/top_level.tcl"
   variable category "vivado_synth"
 }
 
@@ -95,11 +95,14 @@ read_vhdl -library xil_defaultlib {
   /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.srcs/sources_1/imports/new/bit_register.vhd
   /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.srcs/sources_1/new/counter.vhd
   /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.srcs/sources_1/imports/new/multiplexer.vhd
-  /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.srcs/sources_1/new/pulse_generator.vhd
   /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.srcs/sources_1/imports/new/rdc_load_Nbits.vhd
   /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.srcs/sources_1/new/u7_adder.vhd
+  /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.srcs/sources_1/new/top_level.vhd
 }
-read_vhdl -vhdl2008 -library xil_defaultlib /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.srcs/sources_1/new/transmetteur_UART.vhd
+read_vhdl -vhdl2008 -library xil_defaultlib {
+  /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.srcs/sources_1/new/pulse_generator.vhd
+  /home/vini/Documents/FPGA/GIF4202_Lab3/numero5/numero5.srcs/sources_1/new/transmetteur_UART.vhd
+}
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -118,7 +121,7 @@ read_checkpoint -auto_incremental -incremental /home/vini/Documents/FPGA/GIF4202
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top transmetteur_UART -part xc7z020clg400-1
+synth_design -top top_level -part xc7z020clg400-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
@@ -128,10 +131,10 @@ if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef transmetteur_UART.dcp
+write_checkpoint -force -noxdef top_level.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file transmetteur_UART_utilization_synth.rpt -pb transmetteur_UART_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file top_level_utilization_synth.rpt -pb top_level_utilization_synth.pb"
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

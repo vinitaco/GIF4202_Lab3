@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log transmetteur_UART.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source transmetteur_UART.tcl
+EAStep vivado -log top_level.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_level.tcl

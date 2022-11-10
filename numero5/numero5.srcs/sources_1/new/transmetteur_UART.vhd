@@ -81,7 +81,7 @@ architecture Behavioral of transmetteur_UART is
     end component;
 
     -- Machine à états
-    type FSM_STATE is (idle_state, load_state, start_bit_state, data_bits_state, end_bit_state, end_state);
+    type FSM_STATE is (idle_state, start_state, load_state, start_bit_state, data_bits_state, end_bit_state, end_state);
     signal current_state, future_state : FSM_STATE;
 
     -- Générateur de pulses
@@ -123,17 +123,25 @@ begin
          when idle_state =>
             occupe <= '0';
             tx <= '1';
-            pulse_gen_reset <= '1';
             rdc_reset <= '1'; rdc_enable <= '0'; rdc_mode <= '0';
             counter_reset <= '1'; counter_en <= '0';
-            future_state <= load_state when start = '1' else idle_state;
+            future_state <= start_state when start = '1' else idle_state;
+            pulse_gen_reset <= '0' when start = '1' else '1';
+
+         when start_state =>
+            occupe <= '1';
+            tx <= '1';
+            pulse_gen_reset <= '1';
+            rdc_reset <= '0'; rdc_enable <= '0'; rdc_mode <= '0';
+            counter_reset <= '1'; counter_en <= '0';
+            future_state <= load_state;
          when load_state =>
             occupe <= '1';
             tx <= '1';
             pulse_gen_reset <= '0';
             rdc_reset <= '0'; rdc_enable <= '1'; rdc_mode <= '1';
             counter_reset <= '1'; counter_en <= '0';
-            future_state <= start_bit_state;
+            future_state <= start_bit_state when pulse = '1' else load_state;
 
          when start_bit_state =>
             occupe <= '1';

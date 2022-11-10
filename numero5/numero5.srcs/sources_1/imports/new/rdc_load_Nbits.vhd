@@ -67,7 +67,7 @@ begin
 
     generate_regs : for i in 1 to (N - 1) generate
         reg_i : bit_register Port Map (d => d_int(i), clk=>clk, reset=>reset, enable=>enable, q=>q_int(i));
-        mux_i : multiplexer Port Map (input_1=>q_int(i - 1), input_2=>LOAD(i), s=>mode, output=>d_int(i));
+        mux_i : multiplexer Port Map (input_1=>q_int(i - 1), input_2=>load(i), s=>mode, output=>d_int(i));
     end generate generate_regs;
 
     output <= q_int(N - 1);

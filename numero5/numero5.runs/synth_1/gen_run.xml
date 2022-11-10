@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1668105955" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/transmetteur_UART.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="transmetteur_UART_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="transmetteur_UART.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="transmetteur_UART_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="transmetteur_UART_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="transmetteur_UART_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="transmetteur_UART.vds"/>
-  <File Type="REPORTS-TCL" Name="transmetteur_UART_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="transmetteur_UART_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="transmetteur_UART.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1668111644" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/transmetteur_UART.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="top_level_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="top_level.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="top_level_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="top_level_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="top_level_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="top_level.vds"/>
+  <File Type="REPORTS-TCL" Name="top_level_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="top_level_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="top_level.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/adder.vhd">
@@ -43,14 +43,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/pulse_generator.vhd">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/../numero6/numero6.srcs/sources_1/new/pulse_generator.vhd"/>
-        <Attr Name="ImportTime" Val="1667339396"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/new/rdc_load_Nbits.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/rdc_load_Nbits.vhd"/>
@@ -67,10 +59,26 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/pulse_generator.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="ImportPath" Val="$PPRDIR/../numero6/numero6.srcs/sources_1/new/pulse_generator.vhd"/>
+        <Attr Name="ImportTime" Val="1667339396"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/transmetteur_UART.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="ImportPath" Val="$PPRDIR/../numero6/numero6.srcs/sources_1/new/transmetteur_UART.vhd"/>
         <Attr Name="ImportTime" Val="1667357014"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top_level.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../numero6/numero6.srcs/sources_1/new/top_level.vhd"/>
+        <Attr Name="ImportTime" Val="1667357125"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -84,18 +92,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/top_level.vhd">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../numero6/numero6.srcs/sources_1/new/top_level.vhd"/>
-        <Attr Name="ImportTime" Val="1667357125"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="transmetteur_UART"/>
+      <Option Name="TopModule" Val="top_level"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
