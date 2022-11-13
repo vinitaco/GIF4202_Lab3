@@ -1,110 +1,39 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Nov  2 16:49:18 2022" VIVADOVERSION="2022.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Oct 14 01:53:55 2019" VIVADOVERSION="2018.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:zybo-z7-20:part0:1.0" DEVICE="7z020" NAME="HDMI_bd" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="hdmi_in_clk_p" SIGIS="clk" SIGNAME="dvi2rgb_0_TMDS_Clk_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="dvi2rgb_0" PORT="TMDS_Clk_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="hdmi_in_clk_n" SIGIS="clk" SIGNAME="dvi2rgb_0_TMDS_Clk_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="dvi2rgb_0" PORT="TMDS_Clk_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="2" NAME="hdmi_in_data_p" RIGHT="0" SIGIS="undef" SIGNAME="dvi2rgb_0_TMDS_Data_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="dvi2rgb_0" PORT="TMDS_Data_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" LEFT="2" NAME="hdmi_in_data_n" RIGHT="0" SIGIS="undef" SIGNAME="dvi2rgb_0_TMDS_Data_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="dvi2rgb_0" PORT="TMDS_Data_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="hdmi_in_ddc_scl_i" SIGIS="undef" SIGNAME="dvi2rgb_0_SCL_I">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="dvi2rgb_0" PORT="SCL_I"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="hdmi_in_ddc_scl_o" SIGIS="undef" SIGNAME="dvi2rgb_0_SCL_O">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="dvi2rgb_0" PORT="SCL_O"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="hdmi_in_ddc_scl_t" SIGIS="undef" SIGNAME="dvi2rgb_0_SCL_T">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="dvi2rgb_0" PORT="SCL_T"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="hdmi_in_ddc_sda_i" SIGIS="undef" SIGNAME="dvi2rgb_0_SDA_I">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="dvi2rgb_0" PORT="SDA_I"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="hdmi_in_ddc_sda_o" SIGIS="undef" SIGNAME="dvi2rgb_0_SDA_O">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="dvi2rgb_0" PORT="SDA_O"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="hdmi_in_ddc_sda_t" SIGIS="undef" SIGNAME="dvi2rgb_0_SDA_T">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="dvi2rgb_0" PORT="SDA_T"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="O" NAME="hdmi_out_clk_p" SIGIS="clk" SIGNAME="rgb2dvi_0_TMDS_Clk_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="rgb2dvi_0" PORT="TMDS_Clk_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="100000000" DIR="O" NAME="hdmi_out_clk_n" SIGIS="clk" SIGNAME="rgb2dvi_0_TMDS_Clk_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="rgb2dvi_0" PORT="TMDS_Clk_n"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="2" NAME="hdmi_out_data_p" RIGHT="0" SIGIS="undef" SIGNAME="rgb2dvi_0_TMDS_Data_p">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="rgb2dvi_0" PORT="TMDS_Data_p"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" LEFT="2" NAME="hdmi_out_data_n" RIGHT="0" SIGIS="undef" SIGNAME="rgb2dvi_0_TMDS_Data_n">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="rgb2dvi_0" PORT="TMDS_Data_n"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT CLKFREQUENCY="125000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK">
       <CONNECTIONS>
         <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
+    <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_reset">
       <CONNECTIONS>
+        <CONNECTION INSTANCE="clk_wiz_0" PORT="reset"/>
         <CONNECTION INSTANCE="dvi2rgb_0" PORT="aRst"/>
         <CONNECTION INSTANCE="dvi2rgb_0" PORT="pRst"/>
         <CONNECTION INSTANCE="rgb2dvi_0" PORT="aRst"/>
-        <CONNECTION INSTANCE="clk_wiz_0" PORT="reset"/>
       </CONNECTIONS>
     </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="hdmi_in_clk_p" SIGIS="clk"/>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="hdmi_in_clk_n" SIGIS="clk"/>
+    <PORT DIR="I" LEFT="2" NAME="hdmi_in_data_p" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="I" LEFT="2" NAME="hdmi_in_data_n" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="I" NAME="hdmi_in_ddc_scl_i" SIGIS="undef"/>
+    <PORT DIR="O" NAME="hdmi_in_ddc_scl_o" SIGIS="undef"/>
+    <PORT DIR="O" NAME="hdmi_in_ddc_scl_t" SIGIS="undef"/>
+    <PORT DIR="I" NAME="hdmi_in_ddc_sda_i" SIGIS="undef"/>
+    <PORT DIR="O" NAME="hdmi_in_ddc_sda_o" SIGIS="undef"/>
+    <PORT DIR="O" NAME="hdmi_in_ddc_sda_t" SIGIS="undef"/>
+    <PORT CLKFREQUENCY="100000000" DIR="O" NAME="hdmi_out_clk_p" SIGIS="clk"/>
+    <PORT CLKFREQUENCY="100000000" DIR="O" NAME="hdmi_out_clk_n" SIGIS="clk"/>
+    <PORT DIR="O" LEFT="2" NAME="hdmi_out_data_p" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="2" NAME="hdmi_out_data_n" RIGHT="0" SIGIS="undef"/>
     <PORT DIR="O" LEFT="0" NAME="hdmi_in_hpd" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
       <CONNECTIONS>
         <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="red_switch" SIGIS="undef" SIGNAME="External_Ports_red_switch">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="rgb_switch_0" PORT="red_switch"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="green_switch" SIGIS="undef" SIGNAME="External_Ports_green_switch">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="rgb_switch_0" PORT="green_switch"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="blue_switch" SIGIS="undef" SIGNAME="External_Ports_blue_switch">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="rgb_switch_0" PORT="blue_switch"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -139,7 +68,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="10" FULLNAME="/clk_wiz_0" HWVERSION="6.0" INSTANCE="clk_wiz_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz" VLNV="xilinx.com:ip:clk_wiz:6.0">
+    <MODULE FULLNAME="/clk_wiz_0" HWVERSION="6.0" INSTANCE="clk_wiz_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz" VLNV="xilinx.com:ip:clk_wiz:6.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=clk_wiz;v=v6_0;d=pg065-clk-wiz.pdf"/>
       </DOCUMENTS>
@@ -179,7 +108,6 @@
         <PARAMETER NAME="C_USE_MIN_O_JITTER" VALUE="0"/>
         <PARAMETER NAME="C_USE_MAX_I_JITTER" VALUE="0"/>
         <PARAMETER NAME="C_USE_DYN_PHASE_SHIFT" VALUE="0"/>
-        <PARAMETER NAME="C_OPTIMIZE_CLOCKING_STRUCTURE_EN" VALUE="0"/>
         <PARAMETER NAME="C_USE_INCLK_SWITCHOVER" VALUE="0"/>
         <PARAMETER NAME="C_USE_DYN_RECONFIG" VALUE="0"/>
         <PARAMETER NAME="C_USE_SPREAD_SPECTRUM" VALUE="0"/>
@@ -217,7 +145,7 @@
         <PARAMETER NAME="C_INCLK_SUM_ROW2" VALUE="no_secondary_input_clock"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW0A" VALUE="Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW0B" VALUE="Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)"/>
-        <PARAMETER NAME="C_OUTCLK_SUM_ROW1" VALUE="clk_out1__200.00000______0.000______50.0______109.241_____96.948"/>
+        <PARAMETER NAME="C_OUTCLK_SUM_ROW1" VALUE="clk_out1___200.000______0.000______50.0______109.241_____96.948"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW2" VALUE="no_CLK_OUT2_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW3" VALUE="no_CLK_OUT3_output"/>
         <PARAMETER NAME="C_OUTCLK_SUM_ROW4" VALUE="no_CLK_OUT4_output"/>
@@ -245,7 +173,7 @@
         <PARAMETER NAME="C_CLKOUT5_REQUESTED_DUTY_CYCLE" VALUE="50.000"/>
         <PARAMETER NAME="C_CLKOUT6_REQUESTED_DUTY_CYCLE" VALUE="50.000"/>
         <PARAMETER NAME="C_CLKOUT7_REQUESTED_DUTY_CYCLE" VALUE="50.000"/>
-        <PARAMETER NAME="C_CLKOUT1_OUT_FREQ" VALUE="200.00000"/>
+        <PARAMETER NAME="C_CLKOUT1_OUT_FREQ" VALUE="200.000"/>
         <PARAMETER NAME="C_CLKOUT2_OUT_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT3_OUT_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT4_OUT_FREQ" VALUE="100.000"/>
@@ -419,12 +347,12 @@
         <PARAMETER NAME="C_FILTER_1" VALUE="0000"/>
         <PARAMETER NAME="C_FILTER_2" VALUE="0000"/>
         <PARAMETER NAME="C_DIVIDE1_AUTO" VALUE="1"/>
-        <PARAMETER NAME="C_DIVIDE2_AUTO" VALUE="0.2"/>
-        <PARAMETER NAME="C_DIVIDE3_AUTO" VALUE="0.2"/>
-        <PARAMETER NAME="C_DIVIDE4_AUTO" VALUE="0.2"/>
-        <PARAMETER NAME="C_DIVIDE5_AUTO" VALUE="0.2"/>
-        <PARAMETER NAME="C_DIVIDE6_AUTO" VALUE="0.2"/>
-        <PARAMETER NAME="C_DIVIDE7_AUTO" VALUE="0.2"/>
+        <PARAMETER NAME="C_DIVIDE2_AUTO" VALUE="2.0"/>
+        <PARAMETER NAME="C_DIVIDE3_AUTO" VALUE="2.0"/>
+        <PARAMETER NAME="C_DIVIDE4_AUTO" VALUE="2.0"/>
+        <PARAMETER NAME="C_DIVIDE5_AUTO" VALUE="2.0"/>
+        <PARAMETER NAME="C_DIVIDE6_AUTO" VALUE="2.0"/>
+        <PARAMETER NAME="C_DIVIDE7_AUTO" VALUE="2.0"/>
         <PARAMETER NAME="C_PLLBUFGCEDIV" VALUE="false"/>
         <PARAMETER NAME="C_MMCMBUFGCEDIV" VALUE="false"/>
         <PARAMETER NAME="C_PLLBUFGCEDIV1" VALUE="false"/>
@@ -445,28 +373,19 @@
         <PARAMETER NAME="C_CLKOUT5_MATCHED_ROUTING" VALUE="false"/>
         <PARAMETER NAME="C_CLKOUT6_MATCHED_ROUTING" VALUE="false"/>
         <PARAMETER NAME="C_CLKOUT7_MATCHED_ROUTING" VALUE="false"/>
-        <PARAMETER NAME="C_CLKOUT0_ACTUAL_FREQ" VALUE="200.00000"/>
+        <PARAMETER NAME="C_CLKOUT0_ACTUAL_FREQ" VALUE="200.000"/>
         <PARAMETER NAME="C_CLKOUT1_ACTUAL_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT2_ACTUAL_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT3_ACTUAL_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT4_ACTUAL_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT5_ACTUAL_FREQ" VALUE="100.000"/>
         <PARAMETER NAME="C_CLKOUT6_ACTUAL_FREQ" VALUE="100.000"/>
-        <PARAMETER NAME="C_M_MAX" VALUE="64.000"/>
-        <PARAMETER NAME="C_M_MIN" VALUE="2.000"/>
-        <PARAMETER NAME="C_D_MAX" VALUE="42.000"/>
-        <PARAMETER NAME="C_D_MIN" VALUE="1.000"/>
-        <PARAMETER NAME="C_O_MAX" VALUE="128.000"/>
-        <PARAMETER NAME="C_O_MIN" VALUE="1.000"/>
-        <PARAMETER NAME="C_VCO_MIN" VALUE="800.000"/>
-        <PARAMETER NAME="C_VCO_MAX" VALUE="1600.000"/>
         <PARAMETER NAME="Component_Name" VALUE="HDMI_bd_clk_wiz_0_0"/>
         <PARAMETER NAME="USER_CLK_FREQ0" VALUE="100.0"/>
         <PARAMETER NAME="USER_CLK_FREQ1" VALUE="100.0"/>
         <PARAMETER NAME="USER_CLK_FREQ2" VALUE="100.0"/>
         <PARAMETER NAME="USER_CLK_FREQ3" VALUE="100.0"/>
         <PARAMETER NAME="ENABLE_CLOCK_MONITOR" VALUE="false"/>
-        <PARAMETER NAME="OPTIMIZE_CLOCKING_STRUCTURE_EN" VALUE="false"/>
         <PARAMETER NAME="ENABLE_USER_CLOCK0" VALUE="false"/>
         <PARAMETER NAME="ENABLE_USER_CLOCK1" VALUE="false"/>
         <PARAMETER NAME="ENABLE_USER_CLOCK2" VALUE="false"/>
@@ -719,7 +638,7 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
+        <PORT DIR="I" NAME="reset" SIGIS="rst" SIGNAME="External_Ports_reset">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
@@ -738,9 +657,9 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="5" FULLNAME="/dvi2rgb_0" HWVERSION="1.8" INSTANCE="dvi2rgb_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dvi2rgb" VLNV="digilentinc.com:ip:dvi2rgb:1.8">
+    <MODULE FULLNAME="/dvi2rgb_0" HWVERSION="1.8" INSTANCE="dvi2rgb_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dvi2rgb" VLNV="digilentinc.com:ip:dvi2rgb:1.8">
       <DOCUMENTS>
-        <DOCUMENT SOURCE="/home/vini/Documents/FPGA/GIF4202_Lab3/ZYBO_HDMI_MGA_2018_2/repo/vivado-library/ip/dvi2rgb/docs/dvi2rgb.pdf"/>
+        <DOCUMENT SOURCE="/home/mathieu/ZYBO_HDMI_MGA_2018_2/repo/vivado-library/ip/dvi2rgb/docs/dvi2rgb.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="kEmulateDDC" VALUE="true"/>
@@ -757,40 +676,21 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="TMDS_Clk_p" SIGIS="clk" SIGNAME="dvi2rgb_0_TMDS_Clk_p">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="HDMI_bd_imp" PORT="hdmi_in_clk_p"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="TMDS_Clk_n" SIGIS="clk" SIGNAME="dvi2rgb_0_TMDS_Clk_n">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="HDMI_bd_imp" PORT="hdmi_in_clk_n"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="2" NAME="TMDS_Data_p" RIGHT="0" SIGIS="undef" SIGNAME="dvi2rgb_0_TMDS_Data_p">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="HDMI_bd_imp" PORT="hdmi_in_data_p"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="2" NAME="TMDS_Data_n" RIGHT="0" SIGIS="undef" SIGNAME="dvi2rgb_0_TMDS_Data_n">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="HDMI_bd_imp" PORT="hdmi_in_data_n"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="TMDS_Clk_p" SIGIS="clk"/>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="TMDS_Clk_n" SIGIS="clk"/>
+        <PORT DIR="I" LEFT="2" NAME="TMDS_Data_p" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="2" NAME="TMDS_Data_n" RIGHT="0" SIGIS="undef"/>
         <PORT CLKFREQUENCY="200000000" DIR="I" NAME="RefClk" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="aRst" POLARITY="ACTIVE_HIGH" SIGIS="undef" SIGNAME="External_Ports_reset">
+        <PORT DIR="I" NAME="aRst" SIGIS="undef" SIGNAME="External_Ports_reset">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="23" NAME="vid_pData" RIGHT="0" SIGIS="undef" SIGNAME="dvi2rgb_0_vid_pData">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rgb_switch_0" PORT="rgb_input"/>
-          </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pData"/>
           </CONNECTIONS>
@@ -799,22 +699,13 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pVDE"/>
           </CONNECTIONS>
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pVDE"/>
-          </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="vid_pHSync" SIGIS="undef" SIGNAME="dvi2rgb_0_vid_pHSync">
           <CONNECTIONS>
             <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pHSync"/>
           </CONNECTIONS>
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pHSync"/>
-          </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="vid_pVSync" SIGIS="undef" SIGNAME="dvi2rgb_0_vid_pVSync">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pVSync"/>
-          </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pVSync"/>
           </CONNECTIONS>
@@ -825,37 +716,13 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="aPixelClkLckd" SIGIS="undef"/>
-        <PORT DIR="I" NAME="SDA_I" SIGIS="undef" SIGNAME="dvi2rgb_0_SDA_I">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="HDMI_bd_imp" PORT="hdmi_in_ddc_sda_i"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="SDA_O" SIGIS="undef" SIGNAME="dvi2rgb_0_SDA_O">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="HDMI_bd_imp" PORT="hdmi_in_ddc_sda_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="SDA_T" SIGIS="undef" SIGNAME="dvi2rgb_0_SDA_T">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="HDMI_bd_imp" PORT="hdmi_in_ddc_sda_t"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="SCL_I" SIGIS="undef" SIGNAME="dvi2rgb_0_SCL_I">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="HDMI_bd_imp" PORT="hdmi_in_ddc_scl_i"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="SCL_O" SIGIS="undef" SIGNAME="dvi2rgb_0_SCL_O">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="HDMI_bd_imp" PORT="hdmi_in_ddc_scl_o"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="SCL_T" SIGIS="undef" SIGNAME="dvi2rgb_0_SCL_T">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="HDMI_bd_imp" PORT="hdmi_in_ddc_scl_t"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="pRst" POLARITY="ACTIVE_HIGH" SIGIS="undef" SIGNAME="External_Ports_reset">
+        <PORT DIR="I" NAME="SDA_I" SIGIS="undef"/>
+        <PORT DIR="O" NAME="SDA_O" SIGIS="undef"/>
+        <PORT DIR="O" NAME="SDA_T" SIGIS="undef"/>
+        <PORT DIR="I" NAME="SCL_I" SIGIS="undef"/>
+        <PORT DIR="O" NAME="SCL_O" SIGIS="undef"/>
+        <PORT DIR="O" NAME="SCL_T" SIGIS="undef"/>
+        <PORT DIR="I" NAME="pRst" SIGIS="undef" SIGNAME="External_Ports_reset">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
@@ -890,9 +757,9 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="7" FULLNAME="/rgb2dvi_0" HWVERSION="1.4" INSTANCE="rgb2dvi_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="rgb2dvi" VLNV="digilentinc.com:ip:rgb2dvi:1.4">
+    <MODULE FULLNAME="/rgb2dvi_0" HWVERSION="1.4" INSTANCE="rgb2dvi_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="rgb2dvi" VLNV="digilentinc.com:ip:rgb2dvi:1.4">
       <DOCUMENTS>
-        <DOCUMENT SOURCE="/home/vini/Documents/FPGA/GIF4202_Lab3/ZYBO_HDMI_MGA_2018_2/repo/vivado-library/ip/rgb2dvi/docs/rgb2dvi.pdf"/>
+        <DOCUMENT SOURCE="/home/mathieu/ZYBO_HDMI_MGA_2018_2/repo/vivado-library/ip/rgb2dvi/docs/rgb2dvi.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="kGenerateSerialClk" VALUE="true"/>
@@ -908,41 +775,21 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="TMDS_Clk_p" SIGIS="clk" SIGNAME="rgb2dvi_0_TMDS_Clk_p">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="HDMI_bd_imp" PORT="hdmi_out_clk_p"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="TMDS_Clk_n" SIGIS="clk" SIGNAME="rgb2dvi_0_TMDS_Clk_n">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="HDMI_bd_imp" PORT="hdmi_out_clk_n"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="TMDS_Data_p" RIGHT="0" SIGIS="undef" SIGNAME="rgb2dvi_0_TMDS_Data_p">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="HDMI_bd_imp" PORT="hdmi_out_data_p"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="TMDS_Data_n" RIGHT="0" SIGIS="undef" SIGNAME="rgb2dvi_0_TMDS_Data_n">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="HDMI_bd_imp" PORT="hdmi_out_data_n"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="aRst" POLARITY="ACTIVE_HIGH" SIGIS="rst" SIGNAME="External_Ports_reset">
+        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="TMDS_Clk_p" SIGIS="clk"/>
+        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="TMDS_Clk_n" SIGIS="clk"/>
+        <PORT DIR="O" LEFT="2" NAME="TMDS_Data_p" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="2" NAME="TMDS_Data_n" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="aRst" SIGIS="rst" SIGNAME="External_Ports_reset">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="23" NAME="vid_pData" RIGHT="0" SIGIS="undef" SIGNAME="rgb_switch_0_rgb_output">
+        <PORT DIR="I" LEFT="23" NAME="vid_pData" RIGHT="0" SIGIS="undef" SIGNAME="dvi2rgb_0_vid_pData">
           <CONNECTIONS>
             <CONNECTION INSTANCE="dvi2rgb_0" PORT="vid_pData"/>
-            <CONNECTION INSTANCE="rgb_switch_0" PORT="rgb_output"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="vid_pVDE" SIGIS="undef" SIGNAME="dvi2rgb_0_vid_pVDE">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="dvi2rgb_0" PORT="vid_pVDE"/>
-          </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="dvi2rgb_0" PORT="vid_pVDE"/>
           </CONNECTIONS>
@@ -951,14 +798,8 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="dvi2rgb_0" PORT="vid_pHSync"/>
           </CONNECTIONS>
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="dvi2rgb_0" PORT="vid_pHSync"/>
-          </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="vid_pVSync" SIGIS="undef" SIGNAME="dvi2rgb_0_vid_pVSync">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="dvi2rgb_0" PORT="vid_pVSync"/>
-          </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="dvi2rgb_0" PORT="vid_pVSync"/>
           </CONNECTIONS>
@@ -988,42 +829,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/rgb_switch_0" HWVERSION="1.0" INSTANCE="rgb_switch_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="rgb_switch" VLNV="xilinx.com:module_ref:rgb_switch:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="HDMI_bd_rgb_switch_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" NAME="red_switch" SIGIS="undef" SIGNAME="External_Ports_red_switch">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="red_switch"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="green_switch" SIGIS="undef" SIGNAME="External_Ports_green_switch">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="green_switch"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="blue_switch" SIGIS="undef" SIGNAME="External_Ports_blue_switch">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="blue_switch"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="23" NAME="rgb_input" RIGHT="0" SIGIS="undef" SIGNAME="dvi2rgb_0_vid_pData">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="dvi2rgb_0" PORT="vid_pData"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="23" NAME="rgb_output" RIGHT="0" SIGIS="undef" SIGNAME="rgb_switch_0_rgb_output">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rgb2dvi_0" PORT="vid_pData"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="7" FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+    <MODULE FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>

@@ -1,8 +1,8 @@
---Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+--Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
---Date        : Wed Nov  2 16:49:17 2022
---Host        : pop-os running 64-bit Pop!_OS 22.04 LTS
+--Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+--Date        : Mon Oct 14 01:53:53 2019
+--Host        : mathieu-Inspiron-17-7779 running 64-bit Ubuntu 18.04.3 LTS
 --Command     : generate_target HDMI_bd.bd
 --Design      : HDMI_bd
 --Purpose     : IP block netlist
@@ -14,8 +14,6 @@ use UNISIM.VCOMPONENTS.ALL;
 entity HDMI_bd is
   port (
     CLK : in STD_LOGIC;
-    blue_switch : in STD_LOGIC;
-    green_switch : in STD_LOGIC;
     hdmi_in_clk_n : in STD_LOGIC;
     hdmi_in_clk_p : in STD_LOGIC;
     hdmi_in_data_n : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -31,16 +29,23 @@ entity HDMI_bd is
     hdmi_out_clk_p : out STD_LOGIC;
     hdmi_out_data_n : out STD_LOGIC_VECTOR ( 2 downto 0 );
     hdmi_out_data_p : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    red_switch : in STD_LOGIC;
     reset : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of HDMI_bd : entity is "HDMI_bd,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=HDMI_bd,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=5,numReposBlks=5,numNonXlnxBlks=2,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of HDMI_bd : entity is "HDMI_bd,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=HDMI_bd,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=4,numReposBlks=4,numNonXlnxBlks=2,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of HDMI_bd : entity is "HDMI_bd.hwdef";
 end HDMI_bd;
 
 architecture STRUCTURE of HDMI_bd is
+  component HDMI_bd_clk_wiz_0_0 is
+  port (
+    reset : in STD_LOGIC;
+    clk_in1 : in STD_LOGIC;
+    clk_out1 : out STD_LOGIC;
+    locked : out STD_LOGIC
+  );
+  end component HDMI_bd_clk_wiz_0_0;
   component HDMI_bd_dvi2rgb_0_0 is
   port (
     TMDS_Clk_p : in STD_LOGIC;
@@ -78,30 +83,12 @@ architecture STRUCTURE of HDMI_bd is
     PixelClk : in STD_LOGIC
   );
   end component HDMI_bd_rgb2dvi_0_0;
-  component HDMI_bd_rgb_switch_0_0 is
-  port (
-    red_switch : in STD_LOGIC;
-    green_switch : in STD_LOGIC;
-    blue_switch : in STD_LOGIC;
-    rgb_input : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    rgb_output : out STD_LOGIC_VECTOR ( 23 downto 0 )
-  );
-  end component HDMI_bd_rgb_switch_0_0;
-  component HDMI_bd_clk_wiz_0_0 is
-  port (
-    reset : in STD_LOGIC;
-    clk_in1 : in STD_LOGIC;
-    clk_out1 : out STD_LOGIC;
-    locked : out STD_LOGIC
-  );
-  end component HDMI_bd_clk_wiz_0_0;
   component HDMI_bd_xlconstant_0_0 is
   port (
     dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component HDMI_bd_xlconstant_0_0;
   signal CLK_1 : STD_LOGIC;
-  signal blue_switch_1 : STD_LOGIC;
   signal clk_wiz_0_clk_out1 : STD_LOGIC;
   signal dvi2rgb_0_DDC_SCL_I : STD_LOGIC;
   signal dvi2rgb_0_DDC_SCL_O : STD_LOGIC;
@@ -110,29 +97,26 @@ architecture STRUCTURE of HDMI_bd is
   signal dvi2rgb_0_DDC_SDA_O : STD_LOGIC;
   signal dvi2rgb_0_DDC_SDA_T : STD_LOGIC;
   signal dvi2rgb_0_PixelClk : STD_LOGIC;
-  signal dvi2rgb_0_vid_pData : STD_LOGIC_VECTOR ( 23 downto 0 );
-  signal dvi2rgb_0_vid_pHSync : STD_LOGIC;
-  signal dvi2rgb_0_vid_pVDE : STD_LOGIC;
-  signal dvi2rgb_0_vid_pVSync : STD_LOGIC;
-  signal green_switch_1 : STD_LOGIC;
+  signal dvi2rgb_0_RGB_ACTIVE_VIDEO : STD_LOGIC;
+  signal dvi2rgb_0_RGB_DATA : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal dvi2rgb_0_RGB_HSYNC : STD_LOGIC;
+  signal dvi2rgb_0_RGB_VSYNC : STD_LOGIC;
   signal hdmi_in_1_CLK_N : STD_LOGIC;
   signal hdmi_in_1_CLK_P : STD_LOGIC;
   signal hdmi_in_1_DATA_N : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal hdmi_in_1_DATA_P : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal red_switch_1 : STD_LOGIC;
   signal reset_1 : STD_LOGIC;
   signal rgb2dvi_0_TMDS_CLK_N : STD_LOGIC;
   signal rgb2dvi_0_TMDS_CLK_P : STD_LOGIC;
   signal rgb2dvi_0_TMDS_DATA_N : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal rgb2dvi_0_TMDS_DATA_P : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal rgb_switch_0_rgb_output : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_clk_wiz_0_locked_UNCONNECTED : STD_LOGIC;
   signal NLW_dvi2rgb_0_aPixelClkLckd_UNCONNECTED : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of CLK : signal is "xilinx.com:signal:clock:1.0 CLK.CLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of CLK : signal is "XIL_INTERFACENAME CLK.CLK, CLK_DOMAIN HDMI_bd_CLK, FREQ_HZ 125000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.000";
+  attribute X_INTERFACE_PARAMETER of CLK : signal is "XIL_INTERFACENAME CLK.CLK, CLK_DOMAIN HDMI_bd_CLK, FREQ_HZ 125000000, PHASE 0.000";
   attribute X_INTERFACE_INFO of hdmi_in_clk_n : signal is "digilentinc.com:interface:tmds:1.0 hdmi_in CLK_N";
   attribute X_INTERFACE_INFO of hdmi_in_clk_p : signal is "digilentinc.com:interface:tmds:1.0 hdmi_in CLK_P";
   attribute X_INTERFACE_INFO of hdmi_in_ddc_scl_i : signal is "xilinx.com:interface:iic:1.0 hdmi_in_ddc SCL_I";
@@ -144,17 +128,15 @@ architecture STRUCTURE of HDMI_bd is
   attribute X_INTERFACE_INFO of hdmi_out_clk_n : signal is "digilentinc.com:interface:tmds:1.0 hdmi_out CLK_N";
   attribute X_INTERFACE_INFO of hdmi_out_clk_p : signal is "digilentinc.com:interface:tmds:1.0 hdmi_out CLK_P";
   attribute X_INTERFACE_INFO of reset : signal is "xilinx.com:signal:reset:1.0 RST.RESET RST";
-  attribute X_INTERFACE_PARAMETER of reset : signal is "XIL_INTERFACENAME RST.RESET, INSERT_VIP 0, POLARITY ACTIVE_HIGH";
+  attribute X_INTERFACE_PARAMETER of reset : signal is "XIL_INTERFACENAME RST.RESET, POLARITY ACTIVE_HIGH";
   attribute X_INTERFACE_INFO of hdmi_in_data_n : signal is "digilentinc.com:interface:tmds:1.0 hdmi_in DATA_N";
   attribute X_INTERFACE_INFO of hdmi_in_data_p : signal is "digilentinc.com:interface:tmds:1.0 hdmi_in DATA_P";
   attribute X_INTERFACE_INFO of hdmi_out_data_n : signal is "digilentinc.com:interface:tmds:1.0 hdmi_out DATA_N";
   attribute X_INTERFACE_INFO of hdmi_out_data_p : signal is "digilentinc.com:interface:tmds:1.0 hdmi_out DATA_P";
 begin
   CLK_1 <= CLK;
-  blue_switch_1 <= blue_switch;
   dvi2rgb_0_DDC_SCL_I <= hdmi_in_ddc_scl_i;
   dvi2rgb_0_DDC_SDA_I <= hdmi_in_ddc_sda_i;
-  green_switch_1 <= green_switch;
   hdmi_in_1_CLK_N <= hdmi_in_clk_n;
   hdmi_in_1_CLK_P <= hdmi_in_clk_p;
   hdmi_in_1_DATA_N(2 downto 0) <= hdmi_in_data_n(2 downto 0);
@@ -168,7 +150,6 @@ begin
   hdmi_out_clk_p <= rgb2dvi_0_TMDS_CLK_P;
   hdmi_out_data_n(2 downto 0) <= rgb2dvi_0_TMDS_DATA_N(2 downto 0);
   hdmi_out_data_p(2 downto 0) <= rgb2dvi_0_TMDS_DATA_P(2 downto 0);
-  red_switch_1 <= red_switch;
   reset_1 <= reset;
 clk_wiz_0: component HDMI_bd_clk_wiz_0_0
      port map (
@@ -194,10 +175,10 @@ dvi2rgb_0: component HDMI_bd_dvi2rgb_0_0
       aPixelClkLckd => NLW_dvi2rgb_0_aPixelClkLckd_UNCONNECTED,
       aRst => reset_1,
       pRst => reset_1,
-      vid_pData(23 downto 0) => dvi2rgb_0_vid_pData(23 downto 0),
-      vid_pHSync => dvi2rgb_0_vid_pHSync,
-      vid_pVDE => dvi2rgb_0_vid_pVDE,
-      vid_pVSync => dvi2rgb_0_vid_pVSync
+      vid_pData(23 downto 0) => dvi2rgb_0_RGB_DATA(23 downto 0),
+      vid_pHSync => dvi2rgb_0_RGB_HSYNC,
+      vid_pVDE => dvi2rgb_0_RGB_ACTIVE_VIDEO,
+      vid_pVSync => dvi2rgb_0_RGB_VSYNC
     );
 rgb2dvi_0: component HDMI_bd_rgb2dvi_0_0
      port map (
@@ -207,18 +188,10 @@ rgb2dvi_0: component HDMI_bd_rgb2dvi_0_0
       TMDS_Data_n(2 downto 0) => rgb2dvi_0_TMDS_DATA_N(2 downto 0),
       TMDS_Data_p(2 downto 0) => rgb2dvi_0_TMDS_DATA_P(2 downto 0),
       aRst => reset_1,
-      vid_pData(23 downto 0) => rgb_switch_0_rgb_output(23 downto 0),
-      vid_pHSync => dvi2rgb_0_vid_pHSync,
-      vid_pVDE => dvi2rgb_0_vid_pVDE,
-      vid_pVSync => dvi2rgb_0_vid_pVSync
-    );
-rgb_switch_0: component HDMI_bd_rgb_switch_0_0
-     port map (
-      blue_switch => blue_switch_1,
-      green_switch => green_switch_1,
-      red_switch => red_switch_1,
-      rgb_input(23 downto 0) => dvi2rgb_0_vid_pData(23 downto 0),
-      rgb_output(23 downto 0) => rgb_switch_0_rgb_output(23 downto 0)
+      vid_pData(23 downto 0) => dvi2rgb_0_RGB_DATA(23 downto 0),
+      vid_pHSync => dvi2rgb_0_RGB_HSYNC,
+      vid_pVDE => dvi2rgb_0_RGB_ACTIVE_VIDEO,
+      vid_pVSync => dvi2rgb_0_RGB_VSYNC
     );
 xlconstant_0: component HDMI_bd_xlconstant_0_0
      port map (

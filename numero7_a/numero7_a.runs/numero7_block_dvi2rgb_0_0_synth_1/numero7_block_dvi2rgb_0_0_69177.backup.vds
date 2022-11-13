@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Sun Nov 13 15:10:28 2022
+# Process ID: 69177
+# Current directory: /home/vini/Documents/FPGA/GIF4202_Lab3/numero7_a/numero7_a.runs/numero7_block_dvi2rgb_0_0_synth_1
+# Command line: vivado -log numero7_block_dvi2rgb_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source numero7_block_dvi2rgb_0_0.tcl
+# Log file: /home/vini/Documents/FPGA/GIF4202_Lab3/numero7_a/numero7_a.runs/numero7_block_dvi2rgb_0_0_synth_1/numero7_block_dvi2rgb_0_0.vds
+# Journal file: /home/vini/Documents/FPGA/GIF4202_Lab3/numero7_a/numero7_a.runs/numero7_block_dvi2rgb_0_0_synth_1/vivado.jou
+# Running On: pop-os, OS: Linux, CPU Frequency: 3879.658 MHz, CPU Physical cores: 6, Host memory: 16561 MB
+#-----------------------------------------------------------
+source numero7_block_dvi2rgb_0_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/vini/Documents/FPGA/GIF4202_Lab3/IP'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/vini/Xilinx/Vivado/2022.1/data/ip'.
+Command: synth_design -top numero7_block_dvi2rgb_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 69388

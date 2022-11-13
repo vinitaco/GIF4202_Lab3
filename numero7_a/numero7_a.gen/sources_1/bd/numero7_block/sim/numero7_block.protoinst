@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"numero7_block": {
+			"proto_instances": {
+			}
+		}
+	}
+}
