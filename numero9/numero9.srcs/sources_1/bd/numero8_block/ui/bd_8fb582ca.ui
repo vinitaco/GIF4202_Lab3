@@ -1,0 +1,56 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.769193",
+   "Default View_TopLeft":"-44,303",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 5 -x 1350 -y 670 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 1350 -y 690 -defaultsOSRD
+preplace port hdmi_in -pg 1 -lvl 0 -x 0 -y 210 -defaultsOSRD
+preplace port hdmi_in_ddc -pg 1 -lvl 5 -x 1350 -y 260 -defaultsOSRD
+preplace port hdmi_out -pg 1 -lvl 5 -x 1350 -y 130 -defaultsOSRD
+preplace port port-id_clk -pg 1 -lvl 0 -x 0 -y 300 -defaultsOSRD
+preplace port port-id_reset -pg 1 -lvl 0 -x 0 -y 230 -defaultsOSRD
+preplace portBus LED -pg 1 -lvl 5 -x 1350 -y 580 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 2 -x 430 -y 720 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -x 430 -y 500 -defaultsOSRD
+preplace inst dvi2rgb_0 -pg 1 -lvl 2 -x 430 -y 240 -defaultsOSRD
+preplace inst rgb2dvi_0 -pg 1 -lvl 3 -x 850 -y 130 -defaultsOSRD -resize 180 216
+preplace inst color_detector_0 -pg 1 -lvl 3 -x 850 -y 340 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 4 -x 1180 -y 570 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 4 -x 1180 -y 340 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 120 -y 290 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 3 -x 850 -y 540 -defaultsOSRD
+preplace netloc Net 1 1 3 220 600 680 660 1030J
+preplace netloc clk_1 1 0 1 NJ 300
+preplace netloc clk_wiz_0_clk_out1 1 1 1 230 230n
+preplace netloc color_detector_0_blue_detect 1 3 1 N 360
+preplace netloc color_detector_0_green_detect 1 3 1 N 340
+preplace netloc color_detector_0_red_detect 1 3 1 N 320
+preplace netloc dvi2rgb_0_PixelClk 1 2 1 690 200n
+preplace netloc dvi2rgb_0_vid_pData 1 2 1 640 80n
+preplace netloc dvi2rgb_0_vid_pHSync 1 2 1 660 100n
+preplace netloc dvi2rgb_0_vid_pVDE 1 2 1 680 160n
+preplace netloc dvi2rgb_0_vid_pVSync 1 2 1 670 130n
+preplace netloc proc_sys_reset_0_interconnect_aresetn 1 2 1 N 520
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 2 2 670 420 1020J
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 2 230 610 630
+preplace netloc xlconcat_0_dout 1 4 1 1330 340n
+preplace netloc reset_1 1 0 3 20 220 220 100 650
+preplace netloc axi_gpio_1_gpio2_io_o 1 4 1 1330 580n
+preplace netloc S00_AXI_1 1 2 1 650 480n
+preplace netloc TMDS_0_1 1 0 2 NJ 210 NJ
+preplace netloc axi_interconnect_0_M00_AXI 1 3 1 1010 540n
+preplace netloc dvi2rgb_0_DDC 1 2 3 NJ 260 NJ 260 NJ
+preplace netloc dvi2rgb_0_RGB 1 2 1 630 60n
+preplace netloc processing_system7_0_DDR 1 2 3 NJ 670 NJ 670 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 2 3 NJ 690 NJ 690 NJ
+preplace netloc rgb2dvi_0_TMDS 1 3 2 NJ 130 NJ
+levelinfo -pg 1 0 120 430 850 1180 1350
+pagesize -pg 1 -db -bbox -sgen -110 -20 1490 830
+"
+}
+{
+   "da_ps7_cnt":"1"
+}

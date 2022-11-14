@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Mon Nov 14 15:38:53 2022
+# Process ID: 381431
+# Current directory: /home/vini/Documents/FPGA/GIF4202_Lab3/numero9/numero9.runs/numero8_block_dvi2rgb_0_0_synth_1
+# Command line: vivado -log numero8_block_dvi2rgb_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source numero8_block_dvi2rgb_0_0.tcl
+# Log file: /home/vini/Documents/FPGA/GIF4202_Lab3/numero9/numero9.runs/numero8_block_dvi2rgb_0_0_synth_1/numero8_block_dvi2rgb_0_0.vds
+# Journal file: /home/vini/Documents/FPGA/GIF4202_Lab3/numero9/numero9.runs/numero8_block_dvi2rgb_0_0_synth_1/vivado.jou
+# Running On: pop-os, OS: Linux, CPU Frequency: 3276.624 MHz, CPU Physical cores: 6, Host memory: 16561 MB
+#-----------------------------------------------------------
+source numero8_block_dvi2rgb_0_0.tcl -notrace
